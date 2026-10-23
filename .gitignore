@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+.pnp.*
+.yarn/
+
+# secrets - never commit
+.env
+.env.*
+!.env.example
+
+# build output
+dist/
+dist-ssr/
+
+# logs / editor / OS
+*.log
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
