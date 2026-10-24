@@ -81,7 +81,7 @@ const Header = ({ darkHero = true }: { darkHero?: boolean }) => {
             </NavLink>
           ))}
           <ThemeToggle />
-          <Link to="/contact" className="btn btn-amber !py-2.5 !px-6 !text-sm">
+          <Link to="/contact?type=quote" className="btn btn-amber !py-2.5 !px-6 !text-sm">
             Get a Quote
           </Link>
         </nav>

@@ -111,7 +111,7 @@ const ServicePage = () => {
                       {s.body.map((p) => <p key={p}>{p}</p>)}
                     </div>
                     <Link
-                      to="/contact"
+                      to={`/contact?type=quote&service=${s.id}`}
                       className="mt-8 inline-flex items-center gap-3 font-display uppercase tracking-widest font-semibold text-amber hover:gap-5 transition-all"
                     >
                       Enquire about this <Arrow />
@@ -128,7 +128,7 @@ const ServicePage = () => {
         <div className="container-x">
           <Reveal>
             <h2 className="h-display text-5xl md:text-8xl">Have a project in mind?</h2>
-            <Link to="/contact" className="btn bg-ink text-white hover:bg-white hover:text-ink mt-10">
+            <Link to="/contact?type=quote" className="btn bg-ink text-white hover:bg-white hover:text-ink mt-10">
               Get a quote <Arrow />
             </Link>
           </Reveal>

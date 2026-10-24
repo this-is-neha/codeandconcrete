@@ -17,6 +17,18 @@ const sendingSchema = new mongoose.Schema({
         required: true,
     },
 
+    // "message" = quick message, "quote" = quote request
+    type: {
+        type: String,
+        enum: ["message", "quote"],
+        default: "message",
+    },
+    phone: { type: String, default: "" },
+    service: { type: String, default: "" },
+    location: { type: String, default: "" },
+    budget: { type: String, default: "" },
+    timeline: { type: String, default: "" },
+
     createdBy: {
         type: mongoose.Types.ObjectId,
         ref: "User",

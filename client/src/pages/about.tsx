@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "../common/header";
 import Footer from "./footer";
 import { Arrow, PageHero, Reveal } from "../components/ui";
-import hero from "../assets/AdobeStock_1380842662_Preview.jpeg";
+import hero from "../assets/software-hero.jpg";
 import ceo from "../assets/Prabin.jpg";
 import neha from "../assets/Neha.png";
 

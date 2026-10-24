@@ -12,12 +12,13 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-exports.sendEmail = async (to, subject, html, bcc = []) => {
+exports.sendEmail = async (to, subject, html, bcc = [], replyTo) => {
   try {
     const mailOptions = {
       from: `"Code & Concrete" <${process.env.SMTP_FROM}>`,
       to, 
-      bcc, 
+      bcc,
+      ...(replyTo ? { replyTo } : {}),
       subject,
       html,
     };

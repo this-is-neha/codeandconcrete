@@ -19,7 +19,7 @@ const ContactCTA = () => (
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
-          <Link to="/contact" className="btn btn-amber mt-10">Partner with us today <Arrow /></Link>
+          <Link to="/contact?type=quote" className="btn btn-amber mt-10">Partner with us today <Arrow /></Link>
         </Reveal>
       </div>
 

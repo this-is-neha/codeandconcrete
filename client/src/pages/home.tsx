@@ -87,7 +87,7 @@ const Home = () => (
           transition={{ delay: 1.4, duration: 0.8 }}
           className="mt-10 flex flex-wrap gap-4"
         >
-          <Link to="/contact" className="btn btn-amber">Start a project <Arrow /></Link>
+          <Link to="/contact?type=quote" className="btn btn-amber">Start a project <Arrow /></Link>
           <Link to="/services" className="btn btn-ghost">Explore services</Link>
         </motion.div>
       </div>

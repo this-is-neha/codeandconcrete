@@ -11,8 +11,16 @@ const app = express();
 
 app.use(helmet());
 
+// Allow localhost and private-network (LAN) origins, plus any extra origins from CLIENT_ORIGIN
+// (comma-separated, e.g. your deployed site URL).
+const LAN_ORIGIN = /^https?:\/\/(localhost|127\.0\.0\.1|10\.\d+\.\d+\.\d+|192\.168\.\d+\.\d+|172\.(1[6-9]|2\d|3[01])\.\d+\.\d+)(:\d+)?$/;
+const extraOrigins = (process.env.CLIENT_ORIGIN || "").split(",").map((o) => o.trim()).filter(Boolean);
+
 const corsOptions = {
-  origin: [ 'http://localhost:5173'], 
+  origin: (origin, cb) => {
+    if (!origin || LAN_ORIGIN.test(origin) || extraOrigins.includes(origin)) return cb(null, true);
+    cb(new Error("Not allowed by CORS"));
+  },
   allowedHeaders: ['Content-Type', 'Authorization'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'], 
   credentials: true, 
